@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Maghreb</title>
+    <style>
+        /* Styles CSS */
+        .info-alert {
+            position: fixed;
+            top: 40%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: gainsboro;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .info-alert td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .container {
+            position: relative;
+            display: inline-block;
+        }
+        .container img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        .button {
+            position: absolute;
+            border: none;
+            background-color: transparent;
+            color: black;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            color: transparent;
+        }
+        .maroc { top: 87px; left: 110px; }
+        .algerie { top: 135px; left: 190px; font-size: 50px;}
+        .muritane { top: 290px; left: 20px; font-size: 30px;}
+        .lybie { top: 158px; left: 410px; font-size: 50px;}
+        .tunisie { top: 20px; left: 350px; font-size: 5px; height: 100px;}
+    </style>
+</head>
+<body>
+    <!-- Titre -->
+    <h2>Grand Maghreb</h2>
+    <!-- Conteneur d'image -->
+    <div class="container">
+        <img src="grand maghreb.jpg">
+        <!-- Boutons pour chaque pays -->
+        <button class="button maroc" id="maroc">Maroc</button>
+        <button class="button algerie" id="algerie">Algerie</button>
+        <button class="button tunisie" id="tunisie">Tunisie</button>
+        <button class="button lybie" id="lybie">Lybie</button>
+        <button class="button muritane" id="muritane">Muritane</button>
+    </div>
+    <!-- Informations affichées sur le côté -->
+    <div class="info-alert" id="info-alert">
+        <table>
+            <tr>
+                <td>Pays : </td>
+                <td><input type="text" id="pays"></td>
+            </tr>
+            <tr>
+                <td>Population : </td>
+                <td><input type="text" id="population">hab</td>
+            </tr>
+            <tr>
+                <td>Superficie : </td>
+                <td><input type="text" id="superficie">km</td>
+            </tr>
+            <tr>
+                <td>Governement : </td>
+                <td><input type="text" id="governement"></td>
+            </tr>
+            <tr>
+                <td>Capitale : </td>
+                <td><input type="text" id="capitale"></td>
+            </tr>
+            <tr>
+                <td>Monnaie : </td>
+                <td><input type="text" id="monnaie"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        /* Récupération des éléments HTML */
+        var maroc = document.getElementById("maroc");
+        var algerie = document.getElementById("algerie");
+        var tunisie = document.getElementById("tunisie");
+        var lybie = document.getElementById("lybie");
+        var muritane = document.getElementById("muritane");
+
+        var pays = document.getElementById("pays");
+        var population = document.getElementById("population");
+        var superficie = document.getElementById("superficie");
+        var governement = document.getElementById("governement");
+        var capitale = document.getElementById("capitale");
+        var monnaie = document.getElementById("monnaie");
+
+        /* Gestion des événements pour chaque pays */
+        maroc.onmouseover = function(){
+            pays.value = "Maroc";
+            population.value = "36 millions";
+            superficie.value = "446 550";
+            governement.value = "Monarchie constitutionnelle";
+            capitale.value = "Rabat";
+            monnaie.value = "Le dirham marocain (MAD)";
+        };
+
+        algerie.onmouseover = function(){
+            pays.value = "Algerie";
+            population.value = "44 millions";
+            superficie.value = "2 381 741";
+            governement.value = "République semi-présidentielle";
+            capitale.value = "Alger";
+            monnaie.value = "Le dinar algérien (DZD)";
+        };
+
+        tunisie.onmouseover = function(){
+            pays.value = "Tunisie";
+            population.value = "12 millions";
+            superficie.value = "163 610";
+            governement.value = "République semi-présidentielle";
+            capitale.value = "Tunis";
+            monnaie.value = "Le dinar tunisien (TND)";
+        };
+
+        lybie.onmouseover = function(){
+            pays.value = "Lybie";
+            population.value = "7 millions";
+            superficie.value = "1 759 540";
+            governement.value = "État fédéral intérimaire";
+            capitale.value = "Tripoli";
+            monnaie.value = "La dinar libyen (LYD)";
+        };
+
+        muritane.onmouseover = function(){
+            pays.value = "Mauritanie";
+            population.value = "4 millions";
+            superficie.value = "1 030 700";
+            governement.value = "République semi-présidentielle";
+            capitale.value = "Nouakchott";
+            monnaie.value = "L'ouguiya mauritanien (MRU)";
+        };
+
+        /* Réinitialisation des champs lorsqu'on quitte un bouton */
+        maroc.onmouseout = algerie.onmouseout = tunisie.onmouseout = lybie.onmouseout = muritane.onmouseout = function() {
+            pays.value = "";
+            population.value = "";
+            superficie.value = "";
+            governement.value = "";
+            capitale.value = "";
+            monnaie.value = "";
+        };
+    </script>
+</body>
+</html>
